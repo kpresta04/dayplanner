@@ -3,7 +3,6 @@ $(document).ready(function() {
   buttons = document.getElementsByClassName("save-button");
   tableRows = document.getElementsByTagName("tr");
   tableRows = Array.from(tableRows);
-  console.log(tableRows);
 
   tableRows.forEach(function(tableRow, i) {
     $(tableRows[i]).attr("id", `table-row${i - 1}`);
@@ -17,10 +16,25 @@ $(document).ready(function() {
 
     //add click event to each button
     $(buttons[i]).on("click", function() {
-      console.log($(`#text${[i]}`).val());
+      const btnTxt = $(`#text${[i]}`);
+      if ($(btnTxt).val() !== "") {
+        console.log($(btnTxt).val());
+      }
     });
   });
 
-  date = new Date();
-  console.log(date);
+  const today = moment().format("dddd, MMMM Do");
+  $("#today").text(today);
+
+  let hour = moment().format("HH");
+  //   let hour = moment().format();
+
+  if (parseInt(hour) >= 9 && parseInt(hour) < 18) {
+    // if (parseInt(hour) > 12) {
+    //   let twelvehrTime = hour - 12;
+    // }
+    $(tableRows[hour - 8]).attr("style", `background-color: green`);
+
+    console.log(hour);
+  }
 });
