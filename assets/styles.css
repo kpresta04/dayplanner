@@ -7,9 +7,14 @@ html {
 button {
   color: white;
   background-color: #483d8b;
+  background-image: url(./icons8-save-32.png);
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 5px 10px 5px 10px;
   margin-top: 0.5em;
   border-radius: 8px;
+  height: 3em;
+  width: 3em;
 }
 button:hover {
   background: #9370db;
