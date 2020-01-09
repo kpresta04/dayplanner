@@ -11,7 +11,7 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   padding: 5px 10px 5px 10px;
-  margin-top: 2.5em;
+  margin-top: 0.5em;
   border-radius: 8px;
   height: 3em;
   width: 3em;
@@ -32,7 +32,4 @@ textarea {
   border: none;
   resize: none;
   background-color: inherit;
-}
-th {
-  vertical-align: middle !important;
 }
