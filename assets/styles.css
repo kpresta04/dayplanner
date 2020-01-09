@@ -1,0 +1,16 @@
+body,
+html {
+  font-family: "Roboto Mono", monospace;
+  height: 100%;
+  width: 100%;
+}
+button {
+  color: white;
+  background-color: #483d8b;
+  padding: 5px 10px 5px 10px;
+  margin-top: 0.5em;
+  border-radius: 8px;
+}
+button:hover {
+  background: #9370db;
+}
