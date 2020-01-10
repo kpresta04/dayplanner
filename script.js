@@ -27,12 +27,10 @@ $(document).ready(function() {
   $("#today").text(today);
 
   let hour = moment().format("HH");
-  //   let hour = moment().format();
 
   if (parseInt(hour) >= 9 && parseInt(hour) < 18) {
-    // if (parseInt(hour) > 12) {
-    //   let twelvehrTime = hour - 12;
-    // }
+    // change style of current hour
+
     $(tableRows[hour - 8]).attr("style", `background-color: green`);
 
     console.log(hour);
