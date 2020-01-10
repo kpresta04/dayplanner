@@ -26,13 +26,16 @@ $(document).ready(function() {
   const today = moment().format("dddd, MMMM Do");
   $("#today").text(today);
 
-  let hour = moment().format("HH");
+  // const hour = moment().format("HH");
+
+  const hour = "13";
+  // console.log(hour);
+  // console.log(today);
 
   if (parseInt(hour) >= 9 && parseInt(hour) < 18) {
     // change style of current hour
+    // to highlight by changning background color
 
-    $(tableRows[hour - 8]).attr("style", `background-color: green`);
-
-    console.log(hour);
+    $(tableRows[hour - 8]).attr("style", `background-color: #b19cd9`);
   }
 });
