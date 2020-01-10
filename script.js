@@ -8,6 +8,31 @@ $(document).ready(function() {
     $(tableRows[i]).attr("id", `table-row${i - 1}`);
   });
 
+  //array of empty textobjects
+  let textArray = [];
+  for (let i = 0; i < 9; i++) {
+    let textObj = {
+      val: "",
+      text_id: `#text${[i]}`
+    };
+    textArray.push(textObj);
+  }
+
+  //load saved events
+  let getObj = JSON.parse(localStorage.getItem("storeObj"));
+  if (getObj !== null) {
+    // console.log(getObj);
+    textArray = getObj;
+  }
+
+  //add saved events to textareas
+
+  textArray.forEach(function(text, i) {
+    $(`#text${[i]}`).val(textArray[i].val);
+  });
+
+  // console.log(textArray);
+
   // buttons is a HTML collection, must convert to array first,
   //then can use forEach
   Array.from(buttons).forEach(function(button, i) {
@@ -18,7 +43,10 @@ $(document).ready(function() {
     $(buttons[i]).on("click", function() {
       const btnTxt = $(`#text${[i]}`);
       if ($(btnTxt).val() !== "") {
-        console.log($(btnTxt).val());
+        console.log($(btnTxt));
+        textArray[i].val = $(btnTxt).val();
+
+        localStorage.setItem("storeObj", JSON.stringify(textArray));
       }
     });
   });
@@ -26,9 +54,8 @@ $(document).ready(function() {
   const today = moment().format("dddd, MMMM Do");
   $("#today").text(today);
 
-  // const hour = moment().format("HH");
+  const hour = moment().format("HH");
 
-  const hour = "13";
   // console.log(hour);
   // console.log(today);
 
