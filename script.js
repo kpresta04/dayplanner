@@ -43,10 +43,15 @@ $(document).ready(function() {
     $(buttons[i]).on("click", function() {
       const btnTxt = $(`#text${[i]}`);
       if ($(btnTxt).val() !== "") {
-        console.log($(btnTxt));
+        // console.log($(btnTxt));
         textArray[i].val = $(btnTxt).val();
 
         localStorage.setItem("storeObj", JSON.stringify(textArray));
+        //DOM event to let user know that save was succesful
+        // $(`#saved${i}`).text("Saved!");
+        // setTimeout(function() {
+        //   $(`#saved${i}`).empty();
+        // }, 1000);
       }
     });
   });
